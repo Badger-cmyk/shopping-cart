@@ -12,7 +12,7 @@ describe('Navbar', () => {
         )
 
         expect(screen.getByRole('link', { name: /home/i})).toHaveAttribute('href', '/')
-        expect(screen.getByRole('link', { name: /shop/i})).toHaveAttribute('href', '/store')
+        expect(screen.getByRole('link', { name: /shop/i})).toHaveAttribute('href', '/shop')
         expect(screen.getByRole('link', { name: /cart/i})).toHaveAttribute('href', '/cart')
 
     })
