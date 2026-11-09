@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { MemoryRouter } from "react-router-dom";
 import App from "../App";
+import CartProvider from "../context/CartProvider";
 
 describe('App', () => {
     beforeEach(() => {
@@ -17,7 +18,9 @@ describe('App', () => {
     it('should render the home page when navigating to "/"', () => {
         render(
             <MemoryRouter initialEntries={['/']}>
-                <App />
+                <CartProvider>
+                    <App />
+                </CartProvider>
             </MemoryRouter>
         )
 
@@ -27,7 +30,9 @@ describe('App', () => {
     it('should render the shop page when navigating to "/shop"', async () => {
         render(
             <MemoryRouter initialEntries={['/shop']}>
-                <App />
+                <CartProvider>
+                    <App/>
+                </CartProvider>
             </MemoryRouter>
         )
 
@@ -38,7 +43,9 @@ describe('App', () => {
     it('should render the cart page when navigating to "/cart"', () => {
         render(
             <MemoryRouter initialEntries={['/cart']}>
-                <App />
+                <CartProvider>
+                    <App />
+                </CartProvider>
             </MemoryRouter>
         )
 
