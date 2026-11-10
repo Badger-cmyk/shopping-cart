@@ -21,7 +21,7 @@ export default function QuantityInput({ value, onChange, label = 'Quantity' }) {
                 -
             </button>
             <input 
-            type="button"
+            type="number"
             min="1"
             aria-label={label}
             value={value}
