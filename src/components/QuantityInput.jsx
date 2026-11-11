@@ -1,3 +1,5 @@
+import styles from "./QuantityInput.module.css"
+
 export default function QuantityInput({ value, onChange, label = 'Quantity' }) {
     const current = Number(value) || 0
 
@@ -13,14 +15,16 @@ export default function QuantityInput({ value, onChange, label = 'Quantity' }) {
     }
 
     return (
-        <div>
+        <div className={styles.group}>
             <button 
+            className={styles.button}
             type="button" 
             aria-label="Decrease quantity"
             onClick={() => onChange(Math.max(1, current - 1))}>
                 -
             </button>
             <input 
+            className={styles.input}
             type="number"
             min="1"
             aria-label={label}
@@ -28,6 +32,7 @@ export default function QuantityInput({ value, onChange, label = 'Quantity' }) {
             onChange={handleTyping}
             />
             <button
+            className={styles.button}
             type="buttton"
             aria-label="Increase quantity"
             onClick={() => onChange(current + 1)}>
